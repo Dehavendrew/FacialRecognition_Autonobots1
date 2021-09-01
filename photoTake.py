@@ -25,14 +25,14 @@ while(True):
     frame = cv2.resize(frame,(224,224))
 
     #save photo as a jpg
-    fileName = className + "\img_person_" + str(photo_idx) + ".jpg"
+    fileName = className + "\img_person_3_" + str(photo_idx) + ".jpg"
     cv2.imwrite(fileName, frame)
 
 
 
     photo_idx += 1
     #add delay of 1 second between photos
-    time.sleep(1)
+    time.sleep(0.5)
 
     # the 'q' button is set as the
     # quitting button you may use any

@@ -9,7 +9,7 @@ from PIL import Image
 
 vid = cv2.VideoCapture(0)
 
-model = tf.keras.applications.MobileNet()
+model = tf.keras.models.load_model("faceDetector3_1.h5")
 
 while(True):
 
@@ -27,7 +27,7 @@ while(True):
     model_frame = tf.keras.applications.mobilenet.preprocess_input(model_frame)
 
     preds = model.predict(model_frame)
-    print('Person: {0} Non-Person: {1}'.format(preds[0][0], preds[0][1]))
+    print('Correct-Person: {0} Non-Person: {1} Incorrect-Person: {2}'.format(preds[0][0], preds[0][1], preds[0][2]))
     cv2.imshow('frame', frame)
 
 
